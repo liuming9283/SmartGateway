@@ -1,4 +1,3 @@
-# SmartGateway
 # SmartGateway of IoT
 
 ## 项目概述
@@ -16,13 +15,13 @@
 
 该项目的主入口程序为main_entry.py，通过主入口文件，启动了五个子进程，如下：
 
-   main_entry.py-------|
-                       |---http_multi_threading.main()
-                       |---tcp_wifi.main()
-                       |---websocket_test.main()
-                       |---gateway_monitor.main()
-                       |---tcp_control.main()
-                       |
+    main_entry.py-------|
+                        |---http_multi_threading.main()
+                        |---tcp_wifi.main()
+                        |---websocket_test.main()
+                        |---gateway_monitor.main()
+                        |---tcp_control.main()
+                        |
 
 一、http_multi_threading.py：启动两个子线程，分别监控蓝牙和ZigBee串口数据，将数据解析并实时上传，通过HTTP以我们提前约定好的方式提交至服务器。
 
@@ -36,7 +35,7 @@
 
 六、其他程序
 
-  1、add_device.py：Json映射表，将设备出厂的device与平台中用户申请到的devicekey对应起来，并生成Json文件，方便之后对节点上传数据的处理。
+        1、add_device.py：Json映射表，将设备出厂的device与平台中用户申请到的devicekey对应起来，并生成Json文件，方便之后对节点上传数据的处理。
 
 	2、crypto_test.py：之前尝试采用AES对称加密，不过由于Server端采用Java语言编写，对python加密之后没能正确解密，这里可能有哪里出了问题，该文件可作为日后参考。
 
