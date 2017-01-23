@@ -35,14 +35,14 @@
 
 六、其他程序
 
-        1、add_device.py：Json映射表，将设备出厂的device与平台中用户申请到的devicekey对应起来，并生成Json文件，方便之后对节点上传数据的处理。
+   1、add_device.py：Json映射表，将设备出厂的device与平台中用户申请到的devicekey对应起来，并生成Json文件，方便之后对节点上传数据的处理。
 
-	2、crypto_test.py：之前尝试采用AES对称加密，不过由于Server端采用Java语言编写，对python加密之后没能正确解密，这里可能有哪里出了问题，该文件可作为日后参考。
+   2、crypto_test.py：之前尝试采用AES对称加密，不过由于Server端采用Java语言编写，对python加密之后没能正确解密，这里可能有哪里出了问题，该文件可作为日后参考。
 
-	3、daemon_func.py：可以将main_entry.py主入口程序变为守护进程，http://www.cnblogs.com/webber1992/p/6265098.html 这里有详细的介绍
+   3、daemon_func.py：可以将main_entry.py主入口程序变为守护进程，http://www.cnblogs.com/webber1992/p/6265098.html 这里有详细的介绍
 
-	4、httpclient.py和http_multi_process.py：对于监控底层传感节点的另外两种方案，前者在主函数中轮询各个串口以及外置的USB口，这样不好，很容易把串口的buffer区填满而导致上传数据溢出缓冲区；后者采用多进程方式，分别监控各个串口数据。目前采用多线程方式，这两种方式供后续参考。同样在博客中有一些注意点。
+   4、httpclient.py和http_multi_process.py：对于监控底层传感节点的另外两种方案，前者在主函数中轮询各个串口以及外置的USB口，这样不好，很容易把串口的buffer区填满而导致上传数据溢出缓冲区；后者采用多进程方式，分别监控各个串口数据。目前采用多线程方式，这两种方式供后续参考。同样在博客中有一些注意点。
 
-	5、test.py：用于临时测试，作为测试脚本。
+   5、test.py：用于临时测试，作为测试脚本。
 
-	6、node文件中为底层硬件的部分实现（项目组其他人所写）
+   6、node文件中为底层硬件的部分实现（项目组其他人所写）
