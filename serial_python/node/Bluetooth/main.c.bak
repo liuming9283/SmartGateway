@@ -1,0 +1,56 @@
+/******************** (C) COPYRIGHT 2013 CEPARK多功能开发学习板********************
+ * 文件名  ：main.c
+ * 描述    ：3个LED在 SysTick 的控制下，以500ms的频率闪烁。         
+ * 实验平台：野火STM32开发板
+ * 库版本  ：ST3.5.0
+**********************************************************************************/
+#include "stm32f10x.h"
+#include "SysTick.h"
+#include "led.h"
+
+/*
+ * 函数名：main
+ * 描述  ：主函数
+ * 输入  ：无
+ * 输出  ：无
+ */
+int main(void)
+{
+	/* config the sysclock to 72mhz */
+	SystemInit();
+
+	/* config led gpio */
+	LED_GPIO_Config();
+
+	/* 配置SysTick 为10us中断一次 */
+	SysTick_Init();
+	
+  	while (1)
+  	{
+		SysTick->CTRL = 1 << SYSTICK_ENABLE;		   // 使能滴答定时器
+		LED0( 0 ); 
+  	  	Delay_us(50000);    // 50000 * 10us = 500ms
+		LED0( 1 );
+		
+  	  	LED1( 0 ); 
+  	  	Delay_us(50000);    // 50000 * 10us = 500ms
+		LED1( 1 );
+  	
+		LED2( 0 );
+  	  	Delay_us(50000);		// 50000 * 10us = 500ms
+		LED2( 1 );
+  	
+		LED3( 0 );
+  	  	Delay_us(50000);		// 50000 * 10us = 500ms
+		LED3( 1 );
+  	
+		SysTick->CTRL = 0 << SYSTICK_ENABLE;		   // 失能滴答定时器
+  	}
+}
+ 
+
+/******************* (C) COPYRIGHT 2013 CEPARK多功能开发学习板*****END OF FILE****/
+
+
+
+

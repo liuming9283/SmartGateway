@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=auto_gateway_start
+Comment=start the gateway once power on
+Exec=python -u /home/pi/serial_python/main_entry.py > /tmp/Smart_gateway.log 2>&1
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
